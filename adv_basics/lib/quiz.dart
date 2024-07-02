@@ -17,15 +17,15 @@ class _QuizSolver extends State<QuizeSolver> {
       children: [
         Image.asset('assets/images/quiz-logo.png', width: 200),
         const SizedBox(
-          height: 20,
+          height: 30,
         ),
         const Text(
           'Learn flutter the fun way!',
           style: TextStyle(color: Colors.white, fontSize: 28.0),
         ),
-        TextButton(
+        OutlinedButton(
           onPressed: () {},
-          style: TextButton.styleFrom(
+          style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
               textStyle: const TextStyle(fontSize: 28.0)),
           child: const Text('Start Quiz'),
