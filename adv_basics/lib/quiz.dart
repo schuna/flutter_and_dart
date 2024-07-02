@@ -15,9 +15,16 @@ class _QuizSolver extends State<QuizeSolver> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset('assets/images/quiz-logo.png', width: 200),
+        Image.asset(
+          'assets/images/quiz-logo.png',
+          width: 200,
+          color: const Color.fromARGB(150, 249, 248, 248)
+        ),
         const SizedBox(
           height: 30,
+        ),
+        const SizedBox(
+          height: 80,
         ),
         const Text(
           'Learn flutter the fun way!',
