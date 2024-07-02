@@ -24,6 +24,5 @@ class StartScreen extends StatelessWidget {
         child: QuizeSolver(),
       ),
     );
-    ;
   }
 }

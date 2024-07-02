@@ -23,12 +23,16 @@ class _QuizSolver extends State<QuizeSolver> {
           'Learn flutter the fun way!',
           style: TextStyle(color: Colors.white, fontSize: 28.0),
         ),
-        OutlinedButton(
+        const SizedBox(
+          height: 30,
+        ),
+        OutlinedButton.icon(
           onPressed: () {},
           style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
               textStyle: const TextStyle(fontSize: 28.0)),
-          child: const Text('Start Quiz'),
+          icon: const Icon(Icons.arrow_right_alt),
+          label: const Text('Start Quiz'),
         )
       ],
     );
