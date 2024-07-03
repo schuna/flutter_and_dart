@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:adv_basics/answer_button.dart';
 import 'package:flutter/material.dart';
 
@@ -13,10 +15,17 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
-  final currentQuestion = questions[0];
+  var currentQuestionIndex = 0;
+  void answerQuestion() {
+    setState(() {
+      currentQuestionIndex += 1;
+      currentQuestionIndex = min(currentQuestionIndex, questions.length - 1);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    final currentQuestion = questions[currentQuestionIndex];
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -39,7 +48,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               (answer) {
                 return AnswerButton(
                   answerText: answer,
-                  onTap: () {},
+                  onTap: answerQuestion,
                 );
               },
             ),
