@@ -1,47 +1,35 @@
+import 'package:adv_basics/start_screen.dart';
 import 'package:flutter/material.dart';
 
-class QuizeSolver extends StatefulWidget {
-  const QuizeSolver({super.key});
+const startAlignment = Alignment.topLeft;
+const endAlignment = Alignment.bottomRight;
+
+class Quiz extends StatefulWidget {
+  const Quiz({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return _QuizSolver();
+    return _QuizState();
   }
 }
 
-class _QuizSolver extends State<QuizeSolver> {
+class _QuizState extends State<Quiz> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Image.asset(
-          'assets/images/quiz-logo.png',
-          width: 200,
-          color: const Color.fromARGB(150, 249, 248, 248)
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 9, 0, 18),
+            Color.fromARGB(255, 150, 93, 220),
+          ],
+          begin: startAlignment,
+          end: endAlignment,
         ),
-        const SizedBox(
-          height: 30,
-        ),
-        const SizedBox(
-          height: 80,
-        ),
-        const Text(
-          'Learn flutter the fun way!',
-          style: TextStyle(color: Colors.white, fontSize: 28.0),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-        OutlinedButton.icon(
-          onPressed: () {},
-          style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.white,
-              textStyle: const TextStyle(fontSize: 28.0)),
-          icon: const Icon(Icons.arrow_right_alt),
-          label: const Text('Start Quiz'),
-        )
-      ],
+      ),
+      child: const Center(
+        child: StartScreen(),
+      ),
     );
   }
 }

@@ -1,28 +1,37 @@
-import 'package:adv_basics/quiz.dart';
 import 'package:flutter/material.dart';
 
-const startAlignment = Alignment.topLeft;
-const endAlignment = Alignment.bottomRight;
-
 class StartScreen extends StatelessWidget {
-  const StartScreen(this.colors, {super.key});
+  const StartScreen({super.key});
 
-  StartScreen.purple({super.key})
-      : colors = [
-          const Color.fromARGB(255, 9, 0, 18),
-          const Color.fromARGB(255, 150, 93, 220)
-        ];
-  final List<Color> colors;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            colors: colors, begin: startAlignment, end: endAlignment),
-      ),
-      child: const Center(
-        child: QuizeSolver(),
-      ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Image.asset('assets/images/quiz-logo.png',
+            width: 200, color: const Color.fromARGB(150, 249, 248, 248)),
+        const SizedBox(
+          height: 30,
+        ),
+        const SizedBox(
+          height: 80,
+        ),
+        const Text(
+          'Learn flutter the fun way!',
+          style: TextStyle(color: Colors.white, fontSize: 28.0),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        OutlinedButton.icon(
+          onPressed: () {},
+          style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
+              textStyle: const TextStyle(fontSize: 28.0)),
+          icon: const Icon(Icons.arrow_right_alt),
+          label: const Text('Start Quiz'),
+        )
+      ],
     );
   }
 }
