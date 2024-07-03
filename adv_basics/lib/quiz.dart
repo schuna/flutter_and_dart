@@ -42,8 +42,10 @@ class _QuizState extends State<Quiz> {
     if (activeScreen == 'questions-screen') {
       screenWidget = QuestionScreen(onSelectAnswer: chooseAnswer);
     }
-    if(activeScreen == 'results-screen'){
-      screenWidget = const ResultScreen();
+    if (activeScreen == 'results-screen') {
+      screenWidget = ResultScreen(
+        chosenAnswers: selectedAnswers,
+      );
     }
     return Container(
       decoration: const BoxDecoration(
