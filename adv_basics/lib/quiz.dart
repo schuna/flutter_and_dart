@@ -25,6 +25,10 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
+    Widget screenWidget = StartScreen(switchScreen);
+    if (activeScreen == 'questions-screen') {
+      screenWidget = const QuestionScreen();
+    }
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -37,9 +41,7 @@ class _QuizState extends State<Quiz> {
         ),
       ),
       child: Center(
-        child: activeScreen == 'start-screen'
-            ? StartScreen(switchScreen)
-            : const QuestionScreen(),
+        child: screenWidget,
       ),
     );
   }
