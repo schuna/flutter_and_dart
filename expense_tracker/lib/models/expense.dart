@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'package:intl/intl.dart';
@@ -54,7 +52,7 @@ class ExpenseBucket {
             .where((expense) => expense.category == category)
             .toList();
 
-  double get totalExpense {
+  double get totalExpenses {
     double sum = 0.0;
     for (final expense in expenses) {
       sum += expense.amount;
